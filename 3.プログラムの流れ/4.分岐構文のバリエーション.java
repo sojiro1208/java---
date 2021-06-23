@@ -79,5 +79,25 @@
   ・caseの横には値を置き、その後ろには「:」を置く。;と間違えるなよ
   ・default:は、条件に合わない時の処理が不要な場合は省略可能。
 
+  [break文を忘れると？]
+  case内容が２つ処理されてしまうので、気をつけよう
 
-  
+  [あえてbreakを書かないこともできるよ]
+  public class Main {
+    public static void main(stirng() args) {
+      System.out.println("あなたの運勢を占います。");
+      int fortune = new java.util.Random().nextInt(5) + 1;
+      switch (fortune) {
+        case 1:
+        case 2:
+          System.out.println("いいね！");
+          break;
+        case 3:
+          System.out.println("普通です！");
+          break;
+        case 4:
+        case 5:
+          System.out.println("うーん・・・");
+      }
+    }
+  }

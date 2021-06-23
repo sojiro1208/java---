@@ -44,4 +44,52 @@
 
 
   2.強制的な型変換
+  指示をすれば１を強制的に行うことができる。
+  public class Main{
+    public static void main (string[] args) {
+      int age = (int)3.2;  [3.2 をintに型変換して代入せよ！と言う指示]
+      System.out.println(age);
+    }
+  }
+  [結果]
+  3
+
+  [解説]
+  3.2 というdouble型リテラルの前に記述された[int]が
+  強制的な型変換を支持する「キャスト演算子」
+  
+  キャスト演算子は、元のデータを失ってでも強制的に変換しようとする。
+  故に、入りきらないデータは削除されるので、情報の欠損が発生する。
+
+  「余程の理由がない限り、使用は控える」
+
+
   3.演算時の自動型変換
+  代入だけでなく、算術演算子などにより計算が行われる場合も、左右のオペランドは同一の型が原則。
+  int型同士なら結果もint型、double同士ならdouble型になる。
+
+  異なる型同士の計算は、「意味合い的に大きな型に統一されてから演算」が行われる。
+  [例]
+  public class Main{
+    public static void main(string[] args ) {
+      double d = 8.5 / 2;   「2(int型)を2.0(double型)に変換」
+      long l = 5 + 2L;      「5(int型)を5L(long型)に変換」
+      System.out.println(d);
+      System.out.println(l);
+    }
+  }
+
+  [結果]
+  4.25
+  7
+
+  [例2]
+  public class Main {
+    public static void main(string[] args) {
+      String msg = "私の年齢は" + 23;   「23(int型)が"23"(string型)に変換され、連結する」
+      System.out.println(msg);
+    }
+  }
+
+  [結果]
+  私の年齢は23

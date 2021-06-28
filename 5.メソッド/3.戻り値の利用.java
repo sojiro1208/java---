@@ -38,5 +38,27 @@
 [戻り値をそのまま使う]
   [例]
   public class Main{
-    public static int add(int x, int y) {}
+    public static int add(int x, int y) {
+      int ans = x + y;
+      return ans;
+    }
+    public static void main(String[]args) {
+      System.out.println(add(add(10, 20),add(30, 40)));
+    }
   }
+
+  [解説]
+  1.add(10,20)、add(30,40)がそれぞれ計算されadd(30,70)になる
+  2.add(30,70)を再度計算する
+  3.100 が出力される
+
+
+
+[returnの注意点]
+  returnは値を戻すだけでなく、メソッドの終了も行う
+  [例]
+  public static int sample() {
+    return 1 ;
+    int x = 10;・・・「実行されないのでエラーになる」
+  }
+  
